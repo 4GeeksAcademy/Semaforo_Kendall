@@ -3,35 +3,36 @@ import React, { useState } from "react";
 
 //create your first component
 const Home = () => {
-	const [color, setColor] = useState("yellow")
-
+	const [color, setColor] = useState("")
+	
 	const colors = [
 		"red",
 		"yellow",
 		"green"
 	]
 
+
 	function getColorBg (item) {
 		if (item == "red"){
-			return "bg-danger"
+			return " bg-danger "
 		} 
 		if (item == "yellow") {
-			return "bg-warning"
+			return " bg-warning "
 		}
 		if (item == "green") {
-			return "bg-success"
+			return " bg-success "
 		}
 	}
 
 	function isColorActive (item) {
 		if (item == "red" && item == color){
-			return " turn-on-red"
+			return " turn-on-red "
 		} 
 		if (item == "yellow" && item == color) {
-			return " turn-on-yellow"
+			return " turn-on-yellow "
 		}
 		if (item == "green" && item == color) {
-			return " turn-on-green"
+			return " turn-on-green "
 		}
 		return ""
 	}
@@ -45,7 +46,7 @@ const Home = () => {
 					{
 						colors.map((item)=> {
 							return <div key={item} 
-							className={ "col-4 rounded-4 p-3 "+ getColorBg(item) + isColorActive(item) }
+							className={ "col-4 rounded-4 p-3"+ getColorBg(item) + isColorActive(item) }
 							onClick={() => setColor(item)}
 							></div>
 						})
